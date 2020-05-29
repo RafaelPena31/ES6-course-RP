@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title></title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        // Funções construtoras => 3º forma de se criar um objeto, já utilizada no ES5 para sustentar o POO
+
+        let Carro = function(){
+            this.cor = 'Azul'
+            this.modelo = 'Renault Sandero'
+            this.velocidadeAtual = 0
+            this.velocidadeMax = 220
+            this.acelerar = function(){
+                let velocidade = this.getVelocidadeAtual() + 10
+                this.setVelocidadeAtual(velocidade)
+            }
+            this.getVelocidadeAtual = function() {
+                return this.velocidadeAtual
+            }
+            this.setVelocidadeAtual = function(velocidadeAtual){
+                this.velocidadeAtual = velocidadeAtual
+            }
+            
+        }
+
+        let carro = new Carro()
+        carro.acelerar()
+        console.log(carro.getVelocidadeAtual())
+
+    </script>
+</body>
+
+</html> 

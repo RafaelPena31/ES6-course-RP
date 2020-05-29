@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title></title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        //Polimorfismo
+        class Animal{
+            constructor(cor, tamanho, peso){
+                this.cor = cor;
+                this.tamanho = tamanho;
+                this.peso = peso;
+            }
+            dormir(){
+                console.log("Dormir")
+            }
+        }
+        class Passaro extends Animal{ 
+            constructor(bico, cor, tamanho, peso){
+                super(cor, tamanho, peso)
+                this.bico = bico;
+            }
+            voar(){
+                console.log("Voar")
+            }
+            bicarForte(){
+                if(this.bico === 'médio' || this.bico === 'grande'){
+                    console.log('Bicou')
+                } else {
+                    console.log('Bico muito pequeno')
+                }
+            }
+        }
+        class Papagaio extends Passaro{
+            constructor(falar, cor, tamanho, peso, bico){
+                super(bico, cor, tamanho, peso)
+                this.sabeFalar = falar
+            }
+            falar(){
+                if(this.sabeFalar === true){
+                    console.log("Eu sei falar")
+                } else {
+                    console.log("Ele não fala")
+                }
+            }
+        }
+        class Avestruz extends Passaro{
+            constructor(){
+                super('médio', 'bege e preto', 160, 110000)
+            }
+            enterrarCabeça(){
+                console.log('Enterrou a cabeça')
+            }
+            // O polimorfismo se baseia em sobrepor características dos métodos ou atributos dos pais (class extend) para um filho específico
+            voar(){
+                console.log('Não sabe voar')
+            }
+        }
+        let papagaio = new Papagaio(false, 'Azul', 30, 320, 'pequeno')
+        let avestruz = new Avestruz()
+        console.log(papagaio)
+        papagaio.bicarForte()
+        console.log(avestruz)
+        avestruz.enterrarCabeça()
+        avestruz.voar()
+
+    </script>
+</body>
+
+</html> 

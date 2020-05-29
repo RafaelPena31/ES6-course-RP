@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title></title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        function historia(personagem = 'Piter', ativ = 'brincar com a bola', nomeDono = 'Rafael'){
+            document.write(`Era uma vez um cachorro chamado ${personagem}, ele amava ${ativ}, seu dono se chamava ${nomeDono}`)
+        }
+        historia(undefined, 'correr', 'Janet');
+        // Valores de parâmetros podem ter valores defaults predefinidos
+    </script>
+</body>
+
+</html>

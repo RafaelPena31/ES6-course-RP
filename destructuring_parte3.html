@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title></title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        // Desestruturação com função
+        let arr = [2, 3, 4, 9]; 
+        let arr2 = {
+            a: 1,
+            b: 3,
+            c: 9
+        }
+
+      /*   function test([ a, x, ,b ] ){
+            console.log(a, x, b)
+        }
+        test(arr); */
+
+        function test2({ a: x, c: y, z = 0}){
+            console.log(x,y,z)
+        }
+        test2(arr2)
+    
+        // Desestruturação com rest spread
+
+        let restArr = [1, 3, 5, 6];
+        let [a = 0, ...rest] = restArr; console.log(a, rest);
+
+        let restObj = {
+            a: 2,
+            b: 10,
+            d: "x"
+        }
+        let {a:x=0, ...rest2} = restObj; console.log(a, rest2);
+
+    </script>
+</body>
+
+</html> 

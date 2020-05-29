@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title></title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+    // Desestruturaremos um array para obter os seus valores de maneira menos verbosa
+    let frutas = ['morango', 'banana', 'abacate', 'abacaxi']
+    let [a,b='Uva',,c,d='Pinho'] = frutas; console.log(a,b,c,d)
+    let frutasCompile = [['morango', 'cereja', 'maçã'], ['laranja', 'abacaxi']]
+    let [,[,x]] = frutasCompile; console.log(x)
+
+    </script>
+</body>
+
+</html> 

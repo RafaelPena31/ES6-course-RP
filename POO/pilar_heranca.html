@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title></title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        //Herança
+        class Animal{
+            constructor(cor, tamanho, peso){
+            //A classe animal não possui 'super()' pois ela é a classe que será importada
+                this.cor = cor;
+                this.tamanho = tamanho;
+                this.peso = peso;
+            }
+            dormir(){
+                console.log("Dormir")
+            }
+        }
+        class Passaro extends Animal{ 
+            //Utilizamos o termo 'extends' para exportar os atributos e métodos da classe correspondente ao extends (no caso 'Animal')
+            constructor(bico, cor, tamanho, peso){
+                super(cor, tamanho, peso)
+            //Utilizamos o atributo método 'super()' para termos acesso ao constructor da classe que estamos importando
+                this.bico = bico;
+            }
+            voar(){
+                console.log("Voar")
+            }
+            bicarForte(){
+                if(this.bico === 'médio' || this.bico === 'grande'){
+                    console.log('Bicou')
+                } else {
+                    console.log('Bico muito pequeno')
+                }
+            }
+        }
+        class Papagaio extends Passaro{
+            constructor(falar, cor, tamanho, peso, bico){
+                super(bico, cor, tamanho, peso)
+                this.sabeFalar = falar
+            }
+            falar(){
+                if(this.sabeFalar === true){
+                    console.log("Eu sei falar")
+                } else {
+                    console.log("Ele não fala")
+                }
+            }
+        }
+        let papagaio = new Papagaio(false, 'Azul', 30, 320, 'pequeno')
+        //Utilizamos parâmetros do Papagaio que estão sendo repassados por herança para preencher todas as informações necessárias
+        console.log(papagaio)
+        papagaio.bicarForte()
+
+    </script>
+</body>
+
+</html> 

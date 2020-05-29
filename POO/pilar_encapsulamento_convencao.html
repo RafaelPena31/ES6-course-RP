@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title></title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        //Encapsulamento
+        // o JS por não suportar o 'private', 'protected', 'public', foi criado uma convenção de boas práticas de programação para
+        //sustentar o pilar do encapsulamento na linguagem
+        class Tv{
+            constructor(volume){
+                this._relacaoCanal = [1,3,5,7,9,12,12.1];
+                this._canalON = 12;
+                this._volume = volume;
+                // Por boa prática no js, atributos que se iniciam com '_', (underline), devem ser considerados pelo programador como
+                //atributos privados e então, é feito o sistema de getters e setters
+            }
+            //getters e setters
+            // getters e setters são metodologias de acessos a classes 'privates'
+            get canalON(){
+                return this._canalON; 
+            } 
+            set canalON(canal){
+                if(this._relacaoCanal.indexOf(canal)!==-1) {
+                    this._canalON = canal;
+                }
+            }
+        }
+        let tv = new Tv(7);
+        console.log(tv);
+        tv.canalON = 90; // Método set para verificar se existe o numero 90 na array private _relacaoCanal, caso houver, alterar o canalON 
+        //para o mesmo
+        console.log(tv)
+        console.log(tv.canalON) // Método get para puxar classe private
+
+    </script>
+</body>
+
+</html> 

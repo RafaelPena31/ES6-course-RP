@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title></title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        // Trabalharemos com herança a partir do __proto__ de cada objeto
+
+        Object.prototype.attrGlobal = 'Vivo'
+
+        let animal = {attr1: 'Respirar'}
+        let vertebrado = {__proto__:animal, attr2: 'Coluna'}
+        let ave = {__proto__: vertebrado, attr3: 'Voar', attr2: 'Asas'}
+
+        console.log(ave.attr1, ave.attr2, ave.attr3, ave.attrGlobal)
+        console.log(ave)
+
+        // Todo objeto é filho de um object que por sua vez possui seus atributos de prototipo (prototype: __proto__) e por eles, podem ser
+        //feitas gets de heranças porém cuidado. Ao criar um atributo direto no prototype, você torna aquele atributo global a qualquer object
+
+    </script>
+</body>
+
+</html> 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title></title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+    // Desestruturaremos um objeto para obter os seus valores de maneira menos verbosa
+        let Produto = {
+            desc: 'Notebook',
+            preco: 3800,
+            detalhes:{
+                fabricante: 'Acer',
+                modelo: 'Aspire Nitro 5'
+            }
+        }
+        let {desc:p = 'Not Found', preco:v = '00', detalhes:{fabricante:f = 'Caseiro', modelo:m = '1'}} = Produto;
+        console.log(p, v, o)
+
+    </script>
+</body>
+
+</html> 

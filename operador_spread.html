@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title></title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        // Operador spread '...' neste contexto espalha os elementos
+        let text = 'Eu vou revoluncionar minha vida'
+        console.log(text)
+        console.log(...text)
+        let courses1 = ['NodeJS', 'Go', 'Ruby']
+        let courses2 = ['PHP', 'Java', 'Python']
+        let coursesComplete = ['backend completo', ...courses1, ...courses2, 'BD']
+        console.log(coursesComplete)
+
+    </script>
+</body>
+
+</html> 

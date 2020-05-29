@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title></title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        // Criaremos a class que será um modelo do nosso objeto => esse modelo terá um construtor que criará os atributos e 
+        //métodos que representarão nossas ações definidas para o objeto
+
+        //Exemplo conta bancária:
+        //É uma boa prática utilizar CamelCase completo na criação de classes
+        class ContaBancaria {
+            constructor(){
+                this.agencia = 1
+                this.numeroConta = 8569741 //É uma boa prática utilizar camelCase secundário na criação de atributos
+                this.saldo = 620
+                this.limite = 1000
+            }
+            deposito(valor){
+                this.saldo += valor;
+            }
+            saque(valor){
+                this.saldo -= valor;
+            }
+            consultaSaldo(){
+                return this.saldo
+            }
+        } 
+        let rafaelACC = new ContaBancaria();       
+        let janetACC = new ContaBancaria();
+
+        document.write(`Saldo antigo: ${rafaelACC.consultaSaldo()} - `)
+        document.write(`Depósito de: R$ 250,00 - `)
+        rafaelACC.deposito(250)
+        document.write(`Saldo pós depósito: ${rafaelACC.consultaSaldo()} - `)
+        document.write(`Saque de: R$ 100,00 - `)
+        rafaelACC.saque(100)
+        document.write(`Saldo pós saque: ${rafaelACC.consultaSaldo()}`)
+
+    </script>
+</body>
+
+</html> 

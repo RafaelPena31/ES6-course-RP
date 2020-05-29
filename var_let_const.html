@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title></title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        //3 escopos: global, função e bloco
+
+        function x(){
+            if(true){
+                var serie1; // ==> 'VAR' eleva a variável ao próximo escopo 
+                const serie2 = 'Friends'; // ==> 'CONST' não eleva a constante para o escopo superior
+                let serie3; // ==> 'LET' não deixa elevar variável ao próximo escopo
+            }
+            serie1 // ==> válido
+            serie2 // ==> não válido
+            serie3 // ==> não válido
+        }
+
+        x()
+
+        if(true){
+            
+        }
+
+    </script>
+</body>
+
+</html>

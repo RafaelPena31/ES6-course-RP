@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title></title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        class Cadeira{
+            constructor(nPerna, cor, gira){
+                this.nPerna = nPerna;
+                this.cor = cor;
+                this.gira = gira;
+            }
+            giraCadeira(){
+                if(this.gira === true){
+                    console.log("Girou");
+                } else{
+                    console.log("Não girou");
+                }
+            }
+        }
+        let mesa = [];
+        let cadeira1 = new Cadeira(1,'azul',true);
+        let cadeira2 = new Cadeira(3,true,'vermelha');
+        let cadeira3 = new Cadeira(4,false,'verde');
+        let cadeira4 = new Cadeira(3,false,'bege');
+        mese['cadeira1'] = cadeira1;
+        mesa['cadeira2'] = cadeira2;
+        mesa['cadeira3'] = cadeira3;
+        mesa['cadeira4'] = cadeira4;
+        console.log(mesa);
+        //Abstração
+    </script>
+</body>
+
+</html> 

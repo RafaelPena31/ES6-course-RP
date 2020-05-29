@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title></title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        // Operador rest '...' neste contexto juntará as informações. É possível juntar em formato de array
+        let resultado = 0
+        function soma(...param){
+            param.forEach(v => resultado += v)
+            console.log(param)
+            return resultado
+        }
+        console.log(soma(1,4,6,33,2))
+        // Estamos utilizando o rest para pegar diversos parâmetros e juntar somente em um (param) no formato de array
+        function mult(m,...p){
+            resultado = 0
+            console.log(m)
+            console.log(p)
+            p.forEach(v => resultado =+ m*v)
+            return resultado
+        }
+        console.log(mult(5,7,5,4,2,89,45))
+
+    </script>
+</body>
+
+</html> 

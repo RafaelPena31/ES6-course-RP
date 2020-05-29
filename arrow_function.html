@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title></title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+            //função anônima wrapper
+        /* let calc = function(x){
+            return x*x;
+        } */ 
+            // evolui para arrou function
+        /* let calc = (x) =>{
+            return x*x;
+        } */
+            // menos verbosamente evolui (só se implicita o '()' caso seja somente um parâmetro)
+        /* let calc = x =>{
+            return x*x;
+        } */
+            // uma só ação tem 'return implicito'
+        /* let calc = x => x*x; document.write(calc(5)) */
+            // com mais de uma ação é possível usar if em seu modo ternario para implicitar o return
+        let calc = (x=5) => x%2===0?'par':'impar'; document.write(calc(6))
+        
+
+    </script>
+</body>
+
+</html>

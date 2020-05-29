@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title></title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        class Produto{
+            constructor(descricao, preco){
+                this.descricao = descricao
+                this.preco = preco
+            }
+            verDescricao(){
+                console.log("CLASS: "+this.descricao+" por apenas "+this.preco)
+            }
+        }
+        let produtoClass = new Produto('Notebook', 4000)
+        produtoClass.verDescricao()
+
+        // O objeto literal é utilizado quando é necessário somente um objeto e não vários (função principal da class)
+
+        let produtoLiteral = {
+            descricao: 'Macbook Pro - 2020',
+            preco: 12000,
+            verDescricao: function() {
+                console.log("LITERAL "+this.descricao+" por apenas "+this.preco)
+            }
+        }
+        produtoLiteral.verDescricao()
+        // Também é possível fazer pares nome/valor onde o nome se torna o mesmo da variavel setada no objeto
+
+        let descricao = 'Macbook Pro - 2020'
+        let preco = 12000
+        let verDescricao = function() {
+                console.log("LITERAL "+descricao+" por apenas "+preco)
+            }
+
+        let produtoLiteral2 = {
+            descricao,
+            preco,
+            verDescricao() 
+        }
+
+    </script>
+</body>
+
+</html> 
