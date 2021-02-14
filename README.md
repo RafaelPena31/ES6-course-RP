@@ -1,3 +1,3 @@
 # ES6_Course_RP 
-Material criado para auxilizar nos estudos de ES6 e POO a quem precisar.
-:D
+Repository created with study materials on ES6 and POO to help those who need it, have fun :D
+
